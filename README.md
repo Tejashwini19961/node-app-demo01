@@ -32,3 +32,8 @@ When creating Codebuild project, add this to the default policy
     "Effect": "Allow"
 } 
 ```
+
+
+## Docker sample for CodeBuild 
+
+https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html
