@@ -9,7 +9,8 @@ phases:
       #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       # - REPOSITORY_URI=077708451457.dkr.ecr.ap-south-1.amazonaws.com/node-app
       - REPOSITORY_URI=746590608925.dkr.ecr.ap-southeast-2.amazonaws.com/node-app-demo01
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      # - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 746590608925.dkr.ecr.ap-southeast-2.amazonaws.com
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
