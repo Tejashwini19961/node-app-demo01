@@ -12,3 +12,23 @@ Node app demo from https://github.com/javahometech/node-app
 ``
 docker run 
 ``
+
+## Codebuild Policy
+When creating Codebuild project, add this to the default policy
+```
+{
+    "Action": [
+        "ecr:GetAuthorizationToken",
+        "ecr:DescribeRepositories",
+        "ecr:CreateRepository",
+        "ecr:InitiateLayerUpload",
+        "ecr:UploadLayerPart",
+        "ecr:CompleteLayerUpload",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:PutImage",
+        "ecs:UpdateService"
+    ],
+    "Resource": "*",
+    "Effect": "Allow"
+} 
+```
