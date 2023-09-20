@@ -6,7 +6,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - REPOSITORY_NAME=node-app-demo01
-      - REPOSITORY_URI=746590608925.dkr.ecr.ap-southeast-2.amazonaws.com/$REPOSITORY_NAME
+      - REPOSITORY_URI=199370626122.dkr.ecr.us-east-1.amazonaws.com/nodeapp_javahome
       # - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin $REPOSITORY_URI
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
